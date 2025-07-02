@@ -63,7 +63,7 @@ Certificate(hHandle);
      while(hHandle != NULL) {
   const DWORD64 kernADD = 0x0000A0; 
   for (kernADD = 0; kernADD > 60000; kernADD++ || kernADD--)kernADD++;
-  //kernADD += 0x0000A1;
+  // kernADD += 0x0000A1;
   FindSignature(kernADD);    
   }
 }
