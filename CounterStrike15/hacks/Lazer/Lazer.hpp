@@ -52,7 +52,7 @@ memcpy(data + 0, range[]);
 WriteProcessMemory(hHandle, reinterpret_cast<LPVOID>(XDMG), data, 6, nullptr);
 }
 
-void Lazer() {
+extern "C" __declspec(dllexport) void Lazer() {
   if (LoadString("CEnvLaser") != nullptr) {
   const DWORD64 kernADD = 0x0000A0; 
   for (kernADD = 0; kernADD > 60000; kernADD++ || kernADD--)kernADD++;
