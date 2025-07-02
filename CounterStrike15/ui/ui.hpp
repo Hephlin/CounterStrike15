@@ -3,6 +3,14 @@
 
 #include "hacks/Lazer/Lazer.hpp"
 
+void GetCoordinator(float x, float y, void *font, const char *string) {
+    const char *c;
+    glRasterPos2f(x, y);
+    for (c = string; *c != '\0'; c++) {
+        glutBitmapCharacter(font, *c);
+    }
+}
+
 class Lazer {
 int windowWidth = 800;
 int windowHeight = 600;
@@ -11,23 +19,44 @@ int windowHeight = 600;
 float btnX = 300, btnY = 230, btnW = 700, btnH = 200;
 bool isHovered = false;
 
-void drawButton() {
+void drawLazer() {
     // # I want it to already draw as hover is enabled.
     glBegin(GL_QUADS);
-    if (isHovered)
+    
+    if (isHovered) {
+        
         glColor3f(0.4f, 0.6f, 1.0f); 
-    else
+    } else {
         glColor3f(0.2f, 0.5f, 0.8f); 
-    glVertex2f(btnX, btnY);
-    glVertex2f(btnX + btnW, btnY);
-    glVertex2f(btnX + btnW, btnY + btnH);
-    glVertex2f(btnX, btnY + btnH);
+    }
+    
+    glVertex2f(1.15f, -.55f);
+    glVertex2f(-1.15f, .55f);
+    GetCoordinator(-0.25f, -0.05f, GLUT_BITMAP_HELVETICA_18, "Lazer");
+ 
+    glEnd();
+}
+
+void drawFlyHack() {
+    // # I want it to already draw as hover is enabled.
+    glBegin(GL_QUADS);
+    
+    if (isHovered) {
+        
+        glColor3f(0.4f, 0.6f, 1.0f); 
+    } else {
+        glColor3f(0.2f, 0.5f, 0.8f); 
+    }
+
+    glVertex2f(-1.15f, 1.1f);
+    glVertex2f(1.15f, -1.1f);
+    GetCoordinator(-0.25f, -0.05f, GLUT_BITMAP_HELVETICA_18, "FlyHack");
+ 
     glEnd();
 }
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS && isHovered) {
-        // backend
         Lazer();
     }
 }
@@ -41,10 +70,10 @@ void cursor_position_callback(GLFWwindow* window, double xpos, double ypos) {
 }
 
 class clazz {
-DWORD64 UI() {
+DWORD64 Lazer() {
     if (!glfwInit()) return -1;
 
-    GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "Emit_Damage", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "Lazer", NULL, NULL);
     if (!window) {
         glfwTerminate();
         return -1;
@@ -59,7 +88,7 @@ DWORD64 UI() {
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
 
-        drawButton();
+        drawLazer();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -74,8 +103,8 @@ DWORD64 UI() {
 
 int gl_main(void) {
     Lazer clazzLaz;
-    classLaz.clazz clazz1;
-    clazz1.UI();
+    classLaz.clazz clazz;
+    clazz.UI();
 
     
     
