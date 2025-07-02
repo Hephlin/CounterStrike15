@@ -56,7 +56,7 @@ void Certificate(HANDLE hHandle) {
 return hHandle;
 }
 
-extern "C" __declspec(dllexport) void Lazer() {
+extern "C" __declspec(dllexport) void FlyHack() {
 HANDLE hHandle = LoadString("");
 Certificate(hHandle);
   if (hHandle != nullptr)continue;
