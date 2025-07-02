@@ -33,6 +33,8 @@ return EXIT_STATUS;
 inline DWORD64 FindSignature(const DWORD64 module_start, const DWORD64 module_size, const char* sig, const char* mask)
 {
 	BYTE* data = new BYTE[module_size];
+	std::pair<BYTE, int> data;
+	
 	SIZE_T bytesRead;
 
 	ReadProcessMemory(TargetProcess, LPVOID(module_start), data, module_size, &bytesRead);
