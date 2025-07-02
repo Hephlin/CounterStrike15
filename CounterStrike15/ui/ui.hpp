@@ -3,6 +3,7 @@
 
 #include "Source.hpp"
 
+class Lazer {
 int windowWidth = 800;
 int windowHeight = 600;
 
@@ -70,4 +71,5 @@ DWORD64 UI() {
     glfwTerminate();
     return 0;
 }
+};
 };
