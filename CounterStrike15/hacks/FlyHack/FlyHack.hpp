@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <iostream>
 #include <stdbool>
-#include <SDL\SDL3.h>
+#include <SDL3\SDL.h>
 #include <vector>
 #include <stdbool.h>
 
