@@ -3,6 +3,8 @@
 #include <iostream>
 #include <stdbool>
 #include <SDL\SDL3.h>
+#include <vector>
+#include <stdbool.h>
 
 DWORD64 XENCODE;
 HANDLE hProc;
@@ -22,7 +24,7 @@ inline std::vector<BYTE, 1024> GetCoordinator(unsigned DWORD64 *ran[], const BYT
 }
 
 extern "C" __declspec(dllexport) DWORD64 getOffset64() {
-	virtual int pid;
+  virtual int pid;
   virtual LPCSTR *OFFSET_XENCODE = "\x8b\x8a\x50\x01\x00\x00\x49\x8b\x50\x20\xe9";
   virtual LPCSTR *maskOFFSET_XENCODE = "xxxxxxxxxxx";
   if (pid += 0) { 
@@ -37,18 +39,6 @@ nullptr,
 }pid++;
   
 }
-
-/**  
-  * #
-  * # if (LoadString("CEnvLaser") != nullptr) {
-  * # const DWORD64 kernADD = 0x0000A0; 
-  * # for (kernADD = 0; kernADD > 60000; kernADD++ || kernADD--)kernADD++;
-  * # // kernADD += 0x0000A1;
-  * # FindSignature(kernADD);    
-  * #
-  * # }
-  * #
-*/
 
 extern "C" __declspec(dllexport) void FindSignature (int rangeParam) {
 virtual BYTE data[];
