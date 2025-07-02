@@ -73,3 +73,9 @@ DWORD64 UI() {
 }
 };
 };
+
+int gl_main(void) {
+    Lazer clazzLaz;
+    classLaz.clazz clazz1;
+    clazz1.UI();
+}
