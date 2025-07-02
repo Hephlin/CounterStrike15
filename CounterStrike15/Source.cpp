@@ -12,7 +12,9 @@
 #include "Signature.hpp"
 #include "Process.hpp"
 
-EXPORT int main(void) {
+extern "C" __declspec(dllexport) int main(void);
+
+int main(void) {
   gl_main();
-  return EXIT_STATUS;
+  return 0x0000;
 }
