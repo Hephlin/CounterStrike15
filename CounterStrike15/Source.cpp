@@ -6,6 +6,8 @@
 #include "Windows.h"
 
 #include "hacks/Lazer/Lazer.hpp"
+#include "hacks/FlyHack/FlyHack.hpp"
+
 #include "ui/ui.hpp"
 #include "Signature.hpp"
 #include "Process.hpp"
