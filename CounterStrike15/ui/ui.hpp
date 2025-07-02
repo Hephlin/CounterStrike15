@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "hacks/Lazer/Lazer.hpp"
+#include "hacks/FlyHack/FlyHack.hpp"
 
 void GetCoordinator(float x, float y, void *font, const char *string) {
     const char *c;
@@ -55,9 +56,17 @@ void drawFlyHack() {
     glEnd();
 }
 
-void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
+void mouse_button_callback_Lazer(GLFWwindow* window, int button, int action, int mods) {
+    drawLazer();
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS && isHovered) {
         Lazer();
+    }
+}
+
+void mouse_button_callback_FlyHack(GLFWwindow* window, int button, int action, int mods) {
+    drawFlyHack();
+    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS && isHovered) {
+        FlyHack();
     }
 }
 
@@ -89,6 +98,7 @@ DWORD64 Lazer() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         drawLazer();
+        drawFlyHack();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
