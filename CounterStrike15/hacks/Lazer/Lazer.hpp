@@ -58,17 +58,6 @@ memcpy(data + 1, merge + 1);
 GetCoordinator(data, 1910, 1080);
 data = new byte[6]{ 0xb9, 0x00, 0x00, 0x00, 0x00, 0x90 };
 memcpy(data + 0, range[]);
-WriteProcessMemory(hProc, reinterpret_cast<LPVOID>(XDMG), data, 6, nullptr);
-}
 
-	if (FirstTime)
-	{
-		XDMG = getOffset();
-		DWORD pid;
-		GetWindowThreadProcessId(FindWindowA(nullptr, ""), &pid);
-		hProc = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
-		FirstTime = false;
-	}
-	byte* shellcode = new byte[6]{ 0xb9, 0x00, 0x00, 0x00, 0x00, 0x90 };
-	memcpy(shellcode + 1, &damage, 4);
-	WriteProcessMemory(hProc, reinterpret_cast<LPVOID>(XDMG), shellcode, 6, nullptr);
+WriteProcessMemory(hHandle, reinterpret_cast<LPVOID>(XDMG), data, 6, nullptr);
+}
