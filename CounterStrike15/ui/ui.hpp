@@ -1,7 +1,7 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-#include "Source.hpp"
+#include "hacks/Lazer/Lazer.hpp"
 
 class Lazer {
 int windowWidth = 800;
@@ -28,9 +28,7 @@ void drawButton() {
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS && isHovered) {
         // backend
-        system("title UI");
-        GetOffset();
-        std::cout << "Damage Emitted!\n";
+        Lazer();
     }
 }
 
